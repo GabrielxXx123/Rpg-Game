@@ -12,13 +12,7 @@ int main()
 	
 	RenderWindow window(VideoMode(1200, 800), "Gabriel's Game" , Style::Default, settings);
 
-	RectangleShape shape(Vector2f(360.20f, 60.20f));
-	shape.setPosition(Vector2f(600.00f, 400.00f));
-	shape.setFillColor(Color::Cyan);
-	shape.setOutlineColor(Color::Red);
-	shape.setOutlineThickness(20.42f);
-	shape.setOrigin(shape.getSize().x / 2.0f, shape.getSize().y / 2.0f);
-	shape.setRotation(90.00f);
+	
 	
 
 	CircleShape circle(50.21f);
@@ -27,15 +21,35 @@ int main()
 	circle.setOrigin(circle.getRadius(), circle.getRadius());
 
 
-	CircleShape triangle(80, 3);
-	triangle.setFillColor(Color::Yellow);
-	triangle.setOutlineColor(Color::Magenta);
-	triangle.setOrigin(triangle.getRadius(), triangle.getRadius());
-	triangle.setPosition(window.getSize().x /2, 148);
-	triangle.setOutlineThickness(13.21f);
-
+	
 	
 	//--------------------------------------------------------------------INITIALIZE---------------------------------------------------------------------------------
+	
+
+
+
+	//--------------------------------------------------------------------LOAD---------------------------------------------------------------------------------
+	Texture playerTexture;
+	Sprite playerSprite;
+
+	if (playerTexture.loadFromFile("Assets/Player/Textures/spritesheets.png"))
+	{
+		cout << "Player image loaded!" << endl;
+		playerSprite.setTexture(playerTexture);
+		// X ,Y , width, height
+		int xIndex = 0;
+		int yIndex = 0;
+		
+		playerSprite.setTextureRect(IntRect(xIndex * 32, yIndex * 32, 32, 32));
+		playerSprite.scale(Vector2f(3, 3));
+	}
+	else
+	{
+		cout << "Player image failed loaded!" << endl;
+	}
+	playerSprite.setPosition(Vector2f(600.00f, 308.21f));
+
+	//--------------------------------------------------------------------LOAD---------------------------------------------------------------------------------
 
 
 
@@ -43,7 +57,7 @@ int main()
 
 
 
-	// mian game loop
+	// main game loop
 	while (window.isOpen())
 	{
 		//--------------------------------------------------------------------UPDATE---------------------------------------------------------------------------------
@@ -63,6 +77,27 @@ int main()
 				}
 			}
 		}
+			// player controller
+
+		
+			if (Keyboard::isKeyPressed(Keyboard::W))
+			{
+				playerSprite.setPosition(playerSprite.getPosition() + Vector2f(0.0f, -0.5f));
+			}
+			if (Keyboard::isKeyPressed(Keyboard::S))
+			{
+				playerSprite.setPosition(playerSprite.getPosition() + Vector2f(0.0f, 0.5f));
+			}
+			if (Keyboard::isKeyPressed(Keyboard::A))
+			{
+				playerSprite.setPosition(playerSprite.getPosition() + Vector2f(-0.5f, 0.0f));
+			}
+			if (Keyboard::isKeyPressed(Keyboard::D))
+			{
+				playerSprite.setPosition(playerSprite.getPosition() + Vector2f(0.5f, 0.0f));
+			}
+
+
 
 		//--------------------------------------------------------------------UPDATE---------------------------------------------------------------------------------
 
@@ -77,9 +112,8 @@ int main()
 		//--------------------------------------------------------------------DRAW---------------------------------------------------------------------------------
 
 		window.clear(Color::Black);
-		window.draw(shape);
-		window.draw(circle);
-		window.draw(triangle);
+		//window.draw(circle);
+		window.draw(playerSprite);
 		window.display();
 		
 
