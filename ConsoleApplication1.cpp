@@ -32,7 +32,7 @@ int main()
 	Texture bulletTexture;
 	vector <Sprite> bullets;
 	Sprite newBullet;
-	float bulletSpeed = 1.1f;
+	float bulletSpeed = 5.1f;
 
 
 	CircleShape circle(50.21f);
@@ -178,12 +178,7 @@ int main()
 			{
 				bullets.push_back(newBullet);
 				newBullet.setPosition(playerSprite.getPosition());
-				
-				
 
-				
-
-				
 			}
 			// Calculam directia unde sa se indrepte glontul pentru fiecare glont
 
