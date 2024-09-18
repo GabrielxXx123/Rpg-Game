@@ -1,4 +1,4 @@
-#include "Player.h"
+﻿#include "Player.h"
 
 
 void Player::Initialize()
@@ -24,11 +24,18 @@ void Player::Load()
 		cout << "Player image failed loading!" << endl;
 	}
 
+
+	if (bulletTexture.loadFromFile("Assets/Environment/Textures/dildo.png"))
+	{
+		cout << "Bullet image loaded!";
+	}
+
+
 	sprite.setPosition(Vector2f(600.00f, 308.21f));
 
 }
 
-void Player::Update()
+void Player::Update(RenderWindow& window)
 {
 	if (Keyboard::isKeyPressed(Keyboard::W))
 	{
@@ -46,10 +53,26 @@ void Player::Update()
 	{
 		sprite.setPosition(sprite.getPosition() + Vector2f(0.5f, 0.0f));
 	}
+	if (Mouse::isButtonPressed(Mouse::Left))
+	{
+		Vector2f mousePos = window.mapPixelToCoords(Mouse::getPosition(window));
+		Bullet bullet(sprite.getPosition(), mousePos, bulletTexture);  
+		bullets.push_back(bullet);
+	}
+	for (size_t i = 0; i < bullets.size(); ++i)
+	{
+		bullets[i].Update();
+	}
 }
 
 void Player::Draw(RenderWindow& window)
 {
+
 	window.draw(sprite);
+
+	for (size_t i = 0; i < bullets.size(); ++i)
+	{
+		bullets[i].Draw(window);
+	}
 }
 
