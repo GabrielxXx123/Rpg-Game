@@ -3,6 +3,7 @@
 #include "Player.h"
 #include "Enemy.h"
 #include "Bullet.h"
+#include "Mate.h"
 
 using namespace std;
 using namespace sf;
@@ -14,12 +15,16 @@ int main()
 	settings.antialiasingLevel = 8;
 	
 	RenderWindow window(VideoMode(1620, 950), "Gabriel's Game" , Style::Default, settings);
-	
+	window.setVerticalSyncEnabled(true);
+	window.setMouseCursorVisible(1);
 	Player player;
 	player.Initialize();
 
 	Enemy enemy;
 	enemy.Initialize();
+
+
+	Clock clock;
 	
 	//--------------------------------------------------------------------INITIALIZE---------------------------------------------------------------------------------
 	
@@ -41,16 +46,19 @@ int main()
 
 
 
-
 	// main game loop
 	while (window.isOpen())
 	{
 		//--------------------------------------------------------------------UPDATE---------------------------------------------------------------------------------
-		player.Update(window);
-		enemy.Update();
+		
+		
+		float deltaTime = clock.restart().asSeconds();
+
+		player.Update(window,enemy, deltaTime);
+		enemy.Update(deltaTime);
 		
 
-
+		
 		Event event;
 		while (window.pollEvent(event))
 		{
@@ -66,6 +74,9 @@ int main()
 				}
 			}
 		}	
+		
+		cout << "Diferenta dintre cadre este de :" << deltaTime << endl;
+	
 		//--------------------------------------------------------------------UPDATE---------------------------------------------------------------------------------
 
 
@@ -82,18 +93,13 @@ int main()
 		//--------------------------------------------------------------------DRAW---------------------------------------------------------------------------------
 
 		window.clear(Color::Black);
-
 		player.Draw(window);
 		enemy.Draw(window);
-	
-		
-
-	
 		window.display();
 
 		//--------------------------------------------------------------------DRAW---------------------------------------------------------------------------------
-
-
+		
+		
 	}
 
 

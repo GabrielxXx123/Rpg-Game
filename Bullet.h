@@ -19,7 +19,7 @@ private:
 public:
    
     Bullet(Vector2f startPos, Vector2f targetPos, const Texture& texture);
-    void Update();
+    void Update(float deltaTime);
     void Draw(RenderWindow& window);
     Vector2f getPosition();
 };

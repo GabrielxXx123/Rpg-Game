@@ -14,14 +14,14 @@ Bullet::Bullet(Vector2f startPos, Vector2f targetPos, const Texture& texture)
     float magnitude = sqrt(directionVec.x * directionVec.x + directionVec.y * directionVec.y);
     direction = directionVec / magnitude; 
 
-    speed = 5.2f; 
+    speed = 200.2f; 
 }
 
 
 
-void Bullet::Update()
+void Bullet::Update(float deltaTime)
 {
-    sprite.move(direction * speed); 
+    sprite.move(direction * speed * deltaTime); 
 }
 
 void Bullet::Draw(RenderWindow& window)

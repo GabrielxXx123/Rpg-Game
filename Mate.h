@@ -10,6 +10,8 @@ using namespace std;
 
 class Mate
 {
-	Vector2f normalizeVector(Vector2f vector);
+public:
+	static Vector2f normalizeVector(Vector2f vector);
+	static bool checkCollision(FloatRect obj1, FloatRect obj2);
 };
 
