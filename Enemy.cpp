@@ -4,8 +4,8 @@ void Enemy::Initialize()
 {
 	cout << "Enemy created!" << endl;
 	boundingRectangle.setFillColor(Color::Transparent);
-	boundingRectangle.setOutlineThickness(2);
-	boundingRectangle.setOutlineColor(Color::Red);
+    boundingRectangle.setOutlineThickness(2);
+    boundingRectangle.setOutlineColor(Color::Red);
 	sprite.scale(2, 2);
 	boundingRectangle.setSize(Vector2f(size.x * sprite.getScale().x, size.y * sprite.getScale().y));
 	

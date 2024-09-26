@@ -1,3 +1,17 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
-  Enemy.cpp
+  Main.cpp
+C:\Users\Paolino\Desktop\RPG-game\Player.h(30,39): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
+C:\Users\Paolino\Desktop\RPG-game\Player.h(30,39): warning C4244:         with
+C:\Users\Paolino\Desktop\RPG-game\Player.h(30,39): warning C4244:         [
+C:\Users\Paolino\Desktop\RPG-game\Player.h(30,39): warning C4244:             T=int
+C:\Users\Paolino\Desktop\RPG-game\Player.h(30,39): warning C4244:         ]
+  (compiling source file 'Main.cpp')
+  
+C:\Users\Paolino\Desktop\RPG-game\Player.h(30,32): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
+C:\Users\Paolino\Desktop\RPG-game\Player.h(30,32): warning C4244:         with
+C:\Users\Paolino\Desktop\RPG-game\Player.h(30,32): warning C4244:         [
+C:\Users\Paolino\Desktop\RPG-game\Player.h(30,32): warning C4244:             T=int
+C:\Users\Paolino\Desktop\RPG-game\Player.h(30,32): warning C4244:         ]
+  (compiling source file 'Main.cpp')
+  
   ConsoleApplication1.vcxproj -> C:\Users\Paolino\Desktop\RPG-game\Build\x64\Debug\bin\Rpg-Game.exe

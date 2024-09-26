@@ -142,6 +142,7 @@
   <ItemGroup>
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="FrameRate.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Mate.cpp" />
     <ClCompile Include="Player.cpp" />
@@ -149,6 +150,7 @@
   <ItemGroup>
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="FrameRate.h" />
     <ClInclude Include="Main.h" />
     <ClInclude Include="Mate.h" />
     <ClInclude Include="Player.h" />

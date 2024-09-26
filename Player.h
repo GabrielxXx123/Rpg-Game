@@ -13,12 +13,23 @@ private:
 	Texture texture;
 	Texture bulletTexture;
 	RectangleShape boundingRectangle;
-	float width = 32;
-	float height = 32;
-	Vector2i size = Vector2i(32,32);
+	
 	float playerSpeed = 200.0f;
 	float bulletCooldown = 0.2f;    
-	float timeSinceLastShot = 0.0f;  
+	float timeSinceLastShot = 0.0f;
+
+	// X ,Y , width, height pentru a face animatia  
+	int xIndex = 0;
+	int yIndex = 0;
+
+	float animationTimer = 0.0f;    
+	float animationSpeed = 0.05f;    
+
+	float width = 64;
+	float height = 64;
+	Vector2i frameSize = Vector2i(width, height); 
+	
+
 
 
 public :
@@ -32,5 +43,6 @@ public :
 	void Load();
 	void Update(RenderWindow& window, Enemy& enemy, float deltaTime );
 	void Draw(RenderWindow& window);
+
 	
 };

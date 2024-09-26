@@ -4,6 +4,7 @@
 #include "Enemy.h"
 #include "Bullet.h"
 #include "Mate.h"
+#include "FrameRate.h"
 
 using namespace std;
 using namespace sf;
@@ -15,16 +16,22 @@ int main()
 	settings.antialiasingLevel = 8;
 	
 	RenderWindow window(VideoMode(1620, 950), "Gabriel's Game" , Style::Default, settings);
+
 	window.setVerticalSyncEnabled(true);
+	//window.setFramerateLimit(350);
 	window.setMouseCursorVisible(1);
+
 	Player player;
 	player.Initialize();
 
 	Enemy enemy;
 	enemy.Initialize();
 
+	FrameRate fps;
+	fps.Initialize();
 
 	Clock clock;
+	
 	
 	//--------------------------------------------------------------------INITIALIZE---------------------------------------------------------------------------------
 	
@@ -39,10 +46,11 @@ int main()
 	//--------------------------------------------------------------------LOAD---------------------------------------------------------------------------------
 	player.Load();
 	enemy.Load();
+	fps.Load();
 	//--------------------------------------------------------------------LOAD---------------------------------------------------------------------------------
 
-
-
+	
+	
 
 
 
@@ -50,16 +58,16 @@ int main()
 	while (window.isOpen())
 	{
 		//--------------------------------------------------------------------UPDATE---------------------------------------------------------------------------------
-		
-		
 		float deltaTime = clock.restart().asSeconds();
+		
+		
 
 		player.Update(window,enemy, deltaTime);
 		enemy.Update(deltaTime);
-		
+		fps.Update(deltaTime);
 
-		
 		Event event;
+
 		while (window.pollEvent(event))
 		{
 			if (event.type == Event::Closed)
@@ -75,7 +83,7 @@ int main()
 			}
 		}	
 		
-		cout << "Diferenta dintre cadre este de :" << deltaTime << endl;
+	   cout << "Diferenta dintre cadre este de :" << deltaTime << endl;
 	
 		//--------------------------------------------------------------------UPDATE---------------------------------------------------------------------------------
 
@@ -95,8 +103,10 @@ int main()
 		window.clear(Color::Black);
 		player.Draw(window);
 		enemy.Draw(window);
+		fps.Draw(window);
 		window.display();
-
+		
+		
 		//--------------------------------------------------------------------DRAW---------------------------------------------------------------------------------
 		
 		

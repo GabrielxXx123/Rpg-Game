@@ -18,6 +18,7 @@ private:
 	int maxHealth = 10;
 	RectangleShape healthBar;
 	RectangleShape healthBarBackground;
+
 public:
 
 	Sprite sprite;

@@ -8,23 +8,21 @@ void Player::Initialize()
 	boundingRectangle.setOutlineColor(Color::Blue);
 	boundingRectangle.setOutlineThickness(2);
 	boundingRectangle.setFillColor(Color::Transparent);
-	sprite.scale(Vector2f(3, 3));
-	boundingRectangle.setSize(Vector2f(size.x * sprite.getScale().x, size.y * sprite.getScale().y));
+	sprite.scale(Vector2f(2, 2));
+	boundingRectangle.setSize(Vector2f(frameSize.x * sprite.getScale().x, frameSize.y * sprite.getScale().y));
 	sprite.setPosition(Vector2f(400.00f, 230.21f));
 
 }
 
 void Player::Load()
 {
-	if (texture.loadFromFile("Assets/Player/Textures/spritesheets.png"))
+	if (texture.loadFromFile("Assets/Player/Textures/skeleton.png"))
 	{
 		cout << "Player image loaded!" << endl;
 		sprite.setTexture(texture);
-		// X ,Y , width, height
-		int xIndex = 0;
-		int yIndex = 0;
+		
 
-		sprite.setTextureRect(IntRect(xIndex * size.x, yIndex * size.y, size.x, size.y));
+		sprite.setTextureRect(IntRect(xIndex * frameSize.x, yIndex * frameSize.y, frameSize.x, frameSize.y));
 		
 	}
 	else
@@ -45,6 +43,7 @@ void Player::Load()
 
 void Player::Update(RenderWindow& window, Enemy& enemy, float deltaTime)
 {
+	animationTimer += deltaTime;
 	timeSinceLastShot += deltaTime;
 
 	Vector2f playerLastPosition = sprite.getPosition();
@@ -52,18 +51,102 @@ void Player::Update(RenderWindow& window, Enemy& enemy, float deltaTime)
 	if (Keyboard::isKeyPressed(Keyboard::W))
 	{
 		sprite.setPosition(sprite.getPosition() + Vector2f(0.0f, -playerSpeed * deltaTime ));
-	}
-	if (Keyboard::isKeyPressed(Keyboard::S))
-	{
-		sprite.setPosition(sprite.getPosition() + Vector2f(0.0f, playerSpeed * deltaTime));
+		
+
+		
+		if (animationTimer >= animationSpeed)
+		{
+			
+			xIndex++;
+			yIndex = 0;
+			
+			if (xIndex == 8)
+			{
+				xIndex = 0;
+			}
+
+			
+			sprite.setTextureRect(IntRect(xIndex * frameSize.x, yIndex * frameSize.y, frameSize.x, frameSize.y));
+
+			
+			animationTimer = 0.0f;
+		}
+
 	}
 	if (Keyboard::isKeyPressed(Keyboard::A)) 
 	{
 		sprite.setPosition(sprite.getPosition() + Vector2f(-playerSpeed * deltaTime, 0.0f));
+
+		if (animationTimer >= animationSpeed)
+		{
+
+			xIndex++;
+			yIndex = 1;
+
+			if (xIndex == 8 )
+			{
+				xIndex = 0;
+				
+			}
+
+
+			sprite.setTextureRect(IntRect(xIndex * frameSize.x, yIndex * frameSize.y, frameSize.x, frameSize.y));
+
+
+			animationTimer = 0.0f;
+
+		}
+		
+	}
+	if (Keyboard::isKeyPressed(Keyboard::S))
+	{
+		sprite.setPosition(sprite.getPosition() + Vector2f(0.0f, playerSpeed * deltaTime));
+
+		if (animationTimer >= animationSpeed)
+		{
+
+			xIndex++;
+			yIndex = 2;
+
+			if (xIndex == 8)
+			{
+				xIndex = 0;
+
+			}
+
+
+			sprite.setTextureRect(IntRect(xIndex * frameSize.x, yIndex * frameSize.y, frameSize.x, frameSize.y));
+
+
+			animationTimer = 0.0f;
+
+		}
+		
 	}
 	if (Keyboard::isKeyPressed(Keyboard::D))
 	{
 		sprite.setPosition(sprite.getPosition() + Vector2f(playerSpeed * deltaTime, 0.0f));
+
+		if (animationTimer >= animationSpeed)
+		{
+
+			xIndex++;
+			yIndex = 3;
+
+			if (xIndex == 8)
+			{
+				xIndex = 0;
+
+			}
+
+
+			sprite.setTextureRect(IntRect(xIndex * frameSize.x, yIndex * frameSize.y, frameSize.x, frameSize.y));
+
+
+			animationTimer = 0.0f;
+
+		}
+		
 	}
 	if (Mouse::isButtonPressed(Mouse::Left) && timeSinceLastShot >= bulletCooldown)
 	{
@@ -88,10 +171,10 @@ void Player::Update(RenderWindow& window, Enemy& enemy, float deltaTime)
 				cout << "Enemy has been destroyed! YOU MURDERER!" << endl;
 			}
 			
-			//--i;
+			--i;
 		}
 	}
-
+	
 
 
 
@@ -107,6 +190,7 @@ void Player::Update(RenderWindow& window, Enemy& enemy, float deltaTime)
 		
 	}
 	
+	
 }
 
 void Player::Draw(RenderWindow& window)
@@ -120,4 +204,10 @@ void Player::Draw(RenderWindow& window)
 	}
 	window.draw(boundingRectangle);
 }
+
+
+
+
+	
+
 
