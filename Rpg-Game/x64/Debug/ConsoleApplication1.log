@@ -1,17 +1,15 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
-  Main.cpp
-C:\Users\Paolino\Desktop\RPG-game\Player.h(30,39): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
-C:\Users\Paolino\Desktop\RPG-game\Player.h(30,39): warning C4244:         with
-C:\Users\Paolino\Desktop\RPG-game\Player.h(30,39): warning C4244:         [
-C:\Users\Paolino\Desktop\RPG-game\Player.h(30,39): warning C4244:             T=int
-C:\Users\Paolino\Desktop\RPG-game\Player.h(30,39): warning C4244:         ]
-  (compiling source file 'Main.cpp')
-  
-C:\Users\Paolino\Desktop\RPG-game\Player.h(30,32): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
-C:\Users\Paolino\Desktop\RPG-game\Player.h(30,32): warning C4244:         with
-C:\Users\Paolino\Desktop\RPG-game\Player.h(30,32): warning C4244:         [
-C:\Users\Paolino\Desktop\RPG-game\Player.h(30,32): warning C4244:             T=int
-C:\Users\Paolino\Desktop\RPG-game\Player.h(30,32): warning C4244:         ]
-  (compiling source file 'Main.cpp')
-  
+  Map.cpp
+C:\Users\Paolino\Desktop\RPG-game\Map.cpp(50,56): warning C4267: 'argument': conversion from 'size_t' to 'T', possible loss of data
+C:\Users\Paolino\Desktop\RPG-game\Map.cpp(50,56): warning C4267:         with
+C:\Users\Paolino\Desktop\RPG-game\Map.cpp(50,56): warning C4267:         [
+C:\Users\Paolino\Desktop\RPG-game\Map.cpp(50,56): warning C4267:             T=int
+C:\Users\Paolino\Desktop\RPG-game\Map.cpp(50,56): warning C4267:         ]
+C:\Users\Paolino\Desktop\RPG-game\Map.cpp(50,41): warning C4267: 'argument': conversion from 'size_t' to 'T', possible loss of data
+C:\Users\Paolino\Desktop\RPG-game\Map.cpp(50,41): warning C4267:         with
+C:\Users\Paolino\Desktop\RPG-game\Map.cpp(50,41): warning C4267:         [
+C:\Users\Paolino\Desktop\RPG-game\Map.cpp(50,41): warning C4267:             T=int
+C:\Users\Paolino\Desktop\RPG-game\Map.cpp(50,41): warning C4267:         ]
+C:\Users\Paolino\Desktop\RPG-game\Map.cpp(52,57): warning C4244: 'argument': conversion from 'size_t' to 'float', possible loss of data
+C:\Users\Paolino\Desktop\RPG-game\Map.cpp(52,32): warning C4244: 'argument': conversion from 'size_t' to 'float', possible loss of data
   ConsoleApplication1.vcxproj -> C:\Users\Paolino\Desktop\RPG-game\Build\x64\Debug\bin\Rpg-Game.exe

@@ -161,7 +161,7 @@ void Player::Update(RenderWindow& window, Enemy& enemy, float deltaTime)
 
 		if (Mate::checkCollision(bullets[i].sprite.getGlobalBounds(), enemy.sprite.getGlobalBounds()))
 		{
-			
+			enemy.ChangeDirection();
 			bullets.erase(bullets.begin() + i);
 			enemy.takeDamage(1);
 			
@@ -190,7 +190,15 @@ void Player::Update(RenderWindow& window, Enemy& enemy, float deltaTime)
 		
 	}
 	
-	
+	FloatRect windowBounds(0.0f, 0.0f, static_cast<float>(window.getSize().x), static_cast<float>(window.getSize().y));
+	FloatRect enemyBounds = enemy.sprite.getGlobalBounds();
+	if (enemyBounds.left <= windowBounds.left ||
+		enemyBounds.left + enemyBounds.width >= windowBounds.width ||
+		enemyBounds.top <= windowBounds.top ||
+		enemyBounds.top + enemyBounds.height >= windowBounds.height)
+	{
+		enemy.ChangeDirection();
+	}
 }
 
 void Player::Draw(RenderWindow& window)
@@ -204,10 +212,3 @@ void Player::Draw(RenderWindow& window)
 	}
 	window.draw(boundingRectangle);
 }
-
-
-
-
-	
-
-

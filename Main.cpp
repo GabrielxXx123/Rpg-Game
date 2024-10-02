@@ -1,10 +1,8 @@
-﻿#include <vector>
-#include <math.h>
-#include "Player.h"
+﻿#include "Player.h"
 #include "Enemy.h"
-#include "Bullet.h"
-#include "Mate.h"
 #include "FrameRate.h"
+#include "Background.h"
+#include "Map.h"
 
 using namespace std;
 using namespace sf;
@@ -16,11 +14,9 @@ int main()
 	settings.antialiasingLevel = 8;
 	
 	RenderWindow window(VideoMode(1620, 950), "Gabriel's Game" , Style::Default, settings);
-
 	window.setVerticalSyncEnabled(true);
-	//window.setFramerateLimit(350);
 	window.setMouseCursorVisible(1);
-
+	
 	Player player;
 	player.Initialize();
 
@@ -30,7 +26,14 @@ int main()
 	FrameRate fps;
 	fps.Initialize();
 
+	Background background;
+	background.Initialize();
+	
+	Map map;
+	map.Initialize();
+
 	Clock clock;
+	
 	
 	
 	//--------------------------------------------------------------------INITIALIZE---------------------------------------------------------------------------------
@@ -38,15 +41,18 @@ int main()
 
 
 
-
+	
 
 
 
 
 	//--------------------------------------------------------------------LOAD---------------------------------------------------------------------------------
+	map.Load();
 	player.Load();
 	enemy.Load();
 	fps.Load();
+	background.Load();
+	background.ResizeAfterWindow(window);
 	//--------------------------------------------------------------------LOAD---------------------------------------------------------------------------------
 
 	
@@ -83,7 +89,7 @@ int main()
 			}
 		}	
 		
-	   cout << "Diferenta dintre cadre este de :" << deltaTime << endl;
+	 
 	
 		//--------------------------------------------------------------------UPDATE---------------------------------------------------------------------------------
 
@@ -101,6 +107,8 @@ int main()
 		//--------------------------------------------------------------------DRAW---------------------------------------------------------------------------------
 
 		window.clear(Color::Black);
+		//background.Draw(window);
+		map.Draw(window);
 		player.Draw(window);
 		enemy.Draw(window);
 		fps.Draw(window);
