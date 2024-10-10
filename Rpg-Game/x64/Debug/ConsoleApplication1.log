@@ -1,3 +1,6 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
-  Enemy.cpp
+  MapLoader.cpp
+C:\Users\Paolino\Desktop\RPG-game\MapLoader.cpp(58,12): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Paolino\Desktop\RPG-game\MapLoader.cpp(59,10): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+sfml-graphics-s-d.lib(Shader.obj) : warning LNK4099: PDB '' was not found with 'sfml-graphics-s-d.lib(Shader.obj)' or at ''; linking object as if no debug info
   ConsoleApplication1.vcxproj -> C:\Users\Paolino\Desktop\RPG-game\Build\x64\Debug\bin\Rpg-Game.exe

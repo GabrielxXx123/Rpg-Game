@@ -1,9 +1,10 @@
-﻿#include <vector>
-#include <math.h>
-#include "Player.h"
+﻿#include "Player.h"
 #include "Enemy.h"
-#include "Bullet.h"
-#include "Mate.h"
+#include "FrameRate.h"
+#include "Background.h"
+#include "Map.h"
+#include "MapLoader.h"
+
 
 using namespace std;
 using namespace sf;
@@ -17,32 +18,51 @@ int main()
 	RenderWindow window(VideoMode(1620, 950), "Gabriel's Game" , Style::Default, settings);
 	window.setVerticalSyncEnabled(true);
 	window.setMouseCursorVisible(1);
+	
 	Player player;
 	player.Initialize();
 
 	Enemy enemy;
+	
+	
 	enemy.Initialize();
 
+	FrameRate fps;
+	fps.Initialize();
+
+	Background background;
+	background.Initialize();
+	
+	Map map;
+	map.Initialize();
 
 	Clock clock;
+	
+	MapLoader mapLoader;
+	mapLoader.Load("doc.xml");
+	
 	
 	//--------------------------------------------------------------------INITIALIZE---------------------------------------------------------------------------------
 	
 
 
 
-
+	
 
 
 
 
 	//--------------------------------------------------------------------LOAD---------------------------------------------------------------------------------
+	map.Load();
 	player.Load();
 	enemy.Load();
+	fps.Load();
+	background.Load();
+	background.ResizeAfterWindow(window);
 	//--------------------------------------------------------------------LOAD---------------------------------------------------------------------------------
 
-
-
+	
+	
 
 
 
@@ -50,16 +70,16 @@ int main()
 	while (window.isOpen())
 	{
 		//--------------------------------------------------------------------UPDATE---------------------------------------------------------------------------------
-		
-		
 		float deltaTime = clock.restart().asSeconds();
+		
+		
 
+		enemy.Update(deltaTime,window);
 		player.Update(window,enemy, deltaTime);
-		enemy.Update(deltaTime);
-		
+		fps.Update(deltaTime);
 
-		
 		Event event;
+
 		while (window.pollEvent(event))
 		{
 			if (event.type == Event::Closed)
@@ -75,7 +95,7 @@ int main()
 			}
 		}	
 		
-		cout << "Diferenta dintre cadre este de :" << deltaTime << endl;
+	 
 	
 		//--------------------------------------------------------------------UPDATE---------------------------------------------------------------------------------
 
@@ -93,10 +113,14 @@ int main()
 		//--------------------------------------------------------------------DRAW---------------------------------------------------------------------------------
 
 		window.clear(Color::Black);
+		//background.Draw(window);
+		map.Draw(window);
 		player.Draw(window);
 		enemy.Draw(window);
+		fps.Draw(window);
 		window.display();
-
+		
+		
 		//--------------------------------------------------------------------DRAW---------------------------------------------------------------------------------
 		
 		
