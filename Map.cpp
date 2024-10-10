@@ -1,4 +1,4 @@
-#include "Map.h"
+﻿#include "Map.h"
 
 Map::Map()
 	:tileHeight(0)
@@ -6,7 +6,10 @@ Map::Map()
 	, totalTilesX(0)
 	, totalTilesY(0)
 	, totalTiles(0)
-	, tiles(nullptr)
+	, tilesMap(nullptr)
+	, id(0)
+	
+	
 	
 {
 
@@ -14,18 +17,22 @@ Map::Map()
 
 Map::~Map()
 {
-	delete[] tiles;
+	delete[] tilesMap;
+	 
 }
 
 void Map::Initialize()
 {
 	tileHeight = 32;
 	tileWidth = 32;
+	id = 0;
 	
 }
 
 void Map::Load()
 {
+	
+
 	
 		if (mapTexture.loadFromFile("Assets/Environment/Textures/Tiles.png")) 
 		{
@@ -35,35 +42,68 @@ void Map::Load()
 			totalTilesX = mapTexture.getSize().x / tileWidth;
 			totalTilesY = mapTexture.getSize().y / tileHeight;
 			totalTiles = totalTilesX * totalTilesY;
-			tiles = new  Sprite[totalTiles];
+			tilesMap = new  Sprite[totalTiles];
 
 			
+				
+			
 		}
-		
+	
 
 
-			for (size_t y = 0; y < totalTilesY; y++)
+
+
+			for (int y = 0; y < totalTilesY; y++)
 			{
-				for (size_t x = 0; x < totalTilesX; x++)
+				for (int x = 0; x < totalTilesX; x++)
 				{
-					tiles[id].setTexture(mapTexture);
-					tiles[id].setTextureRect(IntRect(x * tileWidth, y * tileHeight, tileWidth, tileHeight));
-					tiles[id].scale(2, 2);
-					tiles[id].setPosition(120 +  x * tileWidth * 2, 30 + y * tileHeight * 2);
+					
+					tilesMap[id].setTexture(mapTexture);
+					tilesMap[id].setTextureRect(IntRect(x * tileWidth, y * tileHeight, tileWidth, tileHeight));
+					tilesMap[id].scale(2, 2);
+					tilesMap[id].setPosition(120 +  x * tileWidth * tilesMap[id].getScale().x, 30 + y * tileHeight * tilesMap[id].getScale().y);
 					id++;
+					
 				}
 			}
+
+			
+			
 		
 }
 
-void Map::Update(float deltaTime)
+void Map::Update(float deltaTime)						// SE LUCREAZA, voiam sa fac coliziune intre masa si restul.
 {
+	for (int y = 0; y < 2; y++)
+	{
+		for (int x = 0; x < 3; x++)
+		{
+			int index = table[y][x];
+
+		     FloatRect tableBounds = tilesMap[index].getGlobalBounds();
+
+		}
+
+	}
+
+	
 }
 
 void Map::Draw(RenderWindow& window)
 {
-	for (int i = 0; i < totalTiles; i++)
+	// am desenat masa 
+
+	for (int y = 0; y < tableHeight; y++)
 	{
-	 window.draw(tiles[i]);
+		for (int x = 0; x < tableWitdh; x++)
+		{
+  
+  
+		int index = table[y][x];
+		tilesMap[index].setScale(4, 2);
+		tilesMap[index].setPosition(650 + tileWidth * x * tilesMap[index].getScale().x, 320 + tileHeight * y * tilesMap[index].getScale().y);
+	   window.draw(tilesMap[index]);
+
+		}
 	}
 }

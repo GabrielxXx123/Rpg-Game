@@ -1,0 +1,9 @@
+<Map>
+<name> Level - 1 </name>
+<tileWidth> 32 </tileWidth>
+<tileHeight> 32 </tileHeight>
+<totalTiles> 900 </totalTiles>
+<path> "Assets/Environment/Textures/Tiles.png" </path>
+<table> 159,160,161,189,190,191 </table>
+</Map>
+

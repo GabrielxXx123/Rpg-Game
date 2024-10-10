@@ -8,7 +8,7 @@ void Enemy::Initialize()
 	boundingRectangle.setFillColor(Color::Transparent);
     boundingRectangle.setOutlineThickness(2);
     boundingRectangle.setOutlineColor(Color::Red);
-	sprite.scale(2, 2);
+	sprite.scale(2, 2);     																								 
 	boundingRectangle.setSize(Vector2f(size.x * sprite.getScale().x, size.y * sprite.getScale().y));
 	
 	healthBarBackground.setFillColor(Color::White);
@@ -22,7 +22,7 @@ void Enemy::Initialize()
 
 void Enemy::Load()
 {
-	if (texture.loadFromFile("Assets/Enemy/Textures/goblin.png"))
+	if (texture.loadFromFile("Assets/Enemy/Textures/goblin.png"))       
 	{
 		cout << "Enemy image loaded!" << endl;
 		sprite.setTexture(texture);
@@ -37,7 +37,7 @@ void Enemy::Load()
 
 }
 
-void Enemy::Update(float deltaTime)
+void Enemy::Update(float deltaTime, RenderWindow &window)
 {
 	healthBarBackground.setPosition(sprite.getPosition().x + 30, sprite.getPosition().y - 10);
 	healthBar.setPosition(sprite.getPosition().x + 30, sprite.getPosition().y - 10);
@@ -47,7 +47,7 @@ void Enemy::Update(float deltaTime)
 	float healthPercentage = static_cast<float>(health) / maxHealth;
 	healthBar.setSize(Vector2f(80.0f * healthPercentage, 8.0f));
    
-	checkDeadOfEnemy(deltaTime);
+	CheckDeadOfEnemy(deltaTime);
 
 	animationTimer += deltaTime;
 
@@ -108,7 +108,7 @@ void Enemy::Update(float deltaTime)
 				sprite.setTextureRect(IntRect(xIndex * size.x, yIndex * size.y, size.x, size.y));
 
 				animationTimer = 0;
-			}
+			} 
 	}
 	
 	if (direction.x == -enemySpeed && direction.y == 0)
@@ -128,10 +128,18 @@ void Enemy::Update(float deltaTime)
 				sprite.setTextureRect(IntRect(xIndex * size.x, yIndex * size.y, size.x, size.y));
 
 				animationTimer = 0;
-			}
+			}  
 	}
 	
-	
+	FloatRect windowBounds(0.0f, 0.0f, static_cast<float>(window.getSize().x), static_cast<float>(window.getSize().y));
+	FloatRect enemyBounds = sprite.getGlobalBounds();
+	if (enemyBounds.left <= windowBounds.left ||
+		enemyBounds.left + enemyBounds.width >= windowBounds.width ||
+		enemyBounds.top <= windowBounds.top ||
+		enemyBounds.top + enemyBounds.height >= windowBounds.height)
+	{
+		ChangeDirection();
+	}
 	
 }
 
@@ -144,6 +152,7 @@ void Enemy::Draw(RenderWindow& window)
 		window.draw(healthBarBackground);
 		window.draw(healthBar);
 	}
+
 	 
 
 	if (!expFinish) 
@@ -152,30 +161,34 @@ void Enemy::Draw(RenderWindow& window)
 	}
 }
 
-void Enemy::takeDamage(int damage)
+void Enemy::TakeDamage(int damage)
 {
 
-	health -= damage;
+	health -= damage;  
 	if (health < 0)
 	{
 		health = 0;
 		
-	}
+	} 
 }
 
-bool Enemy::isDead()
+bool Enemy::IsDead()
 {
 	return health <= 0;
 }
 
-void Enemy::checkDeadOfEnemy(float deltaTime)
+
+
+
+
+void Enemy::CheckDeadOfEnemy(float deltaTime)
 {
 	if (health == 0)
 	{
 		enemyDead = true;
 	}
 
-	if (isDead() == true)
+	if (IsDead() == true)
 	{
 
 		expAnimationTime += deltaTime;

@@ -22,14 +22,14 @@ private:
 	int xExpIndex = 0;
 	int yExpIndex = 8;
 	Vector2f expSize = Vector2f(64.0f, 44.5f);
-	bool expFinish;
+	bool expFinish = false;
 
 
 
 	//enemy
 	Texture texture;
     Vector2f size =	Vector2f(64,65);
-	bool enemyDead;
+	bool enemyDead = false;
 	Vector2f direction = Vector2f(0.0f,0.0f);
 	float enemySpeed = 100;
 	int xIndex = 0;
@@ -46,7 +46,7 @@ private:
 
 	// bounding square && healthbar
 	RectangleShape boundingRectangle;
-	int health = 10;
+	int health = 10; 
 	int maxHealth = 10;
 	RectangleShape healthBar;
 	RectangleShape healthBarBackground;
@@ -59,11 +59,14 @@ public :
 	void ChangeDirection();
 	void Initialize();
 	void Load();
-	void checkDeadOfEnemy(float deltaTime);
-	void Update(float deltaTime);
+	void CheckDeadOfEnemy(float deltaTime);
+	void Update(float deltaTime, RenderWindow &window);
 	void Draw(RenderWindow& window);
-	void takeDamage(int damage);
-	bool isDead();
+	void TakeDamage(int damage);
+	bool IsDead();
+
+
+
 
 
 

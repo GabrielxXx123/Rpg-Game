@@ -41,8 +41,10 @@ void Player::Load()
 
 }
 
-void Player::Update(RenderWindow& window, Enemy& enemy, float deltaTime)
-{
+void Player::Update(RenderWindow& window, Enemy &enemy, float deltaTime)
+{  
+	 
+	 
 	animationTimer += deltaTime;
 	timeSinceLastShot += deltaTime;
 
@@ -163,10 +165,10 @@ void Player::Update(RenderWindow& window, Enemy& enemy, float deltaTime)
 		{
 			enemy.ChangeDirection();
 			bullets.erase(bullets.begin() + i);
-			enemy.takeDamage(1);
+			enemy.TakeDamage(1);
 			
 			cout << "Bullet hit the enemy!" << endl;
-			if (enemy.isDead())
+			if (enemy.IsDead())
 			{
 				cout << "Enemy has been destroyed! YOU MURDERER!" << endl;
 			}
@@ -187,18 +189,12 @@ void Player::Update(RenderWindow& window, Enemy& enemy, float deltaTime)
 	{
 		sprite.setPosition(playerLastPosition);
 		cout << "COLLISION!";
+		enemy.ChangeDirection();
 		
 	}
+
 	
-	FloatRect windowBounds(0.0f, 0.0f, static_cast<float>(window.getSize().x), static_cast<float>(window.getSize().y));
-	FloatRect enemyBounds = enemy.sprite.getGlobalBounds();
-	if (enemyBounds.left <= windowBounds.left ||
-		enemyBounds.left + enemyBounds.width >= windowBounds.width ||
-		enemyBounds.top <= windowBounds.top ||
-		enemyBounds.top + enemyBounds.height >= windowBounds.height)
-	{
-		enemy.ChangeDirection();
-	}
+	
 }
 
 void Player::Draw(RenderWindow& window)

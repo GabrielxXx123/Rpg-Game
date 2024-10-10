@@ -3,6 +3,8 @@
 #include "FrameRate.h"
 #include "Background.h"
 #include "Map.h"
+#include "MapLoader.h"
+
 
 using namespace std;
 using namespace sf;
@@ -21,6 +23,8 @@ int main()
 	player.Initialize();
 
 	Enemy enemy;
+	
+	
 	enemy.Initialize();
 
 	FrameRate fps;
@@ -34,6 +38,8 @@ int main()
 
 	Clock clock;
 	
+	MapLoader mapLoader;
+	mapLoader.Load("doc.xml");
 	
 	
 	//--------------------------------------------------------------------INITIALIZE---------------------------------------------------------------------------------
@@ -68,8 +74,8 @@ int main()
 		
 		
 
+		enemy.Update(deltaTime,window);
 		player.Update(window,enemy, deltaTime);
-		enemy.Update(deltaTime);
 		fps.Update(deltaTime);
 
 		Event event;

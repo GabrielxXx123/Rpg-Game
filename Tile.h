@@ -8,7 +8,7 @@ using namespace sf;
 
 struct Tile
 {
-
+	
 
 };
 
