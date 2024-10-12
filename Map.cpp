@@ -1,5 +1,6 @@
 ﻿#include "Map.h"
 
+
 Map::Map()
 	:tileHeight(0)
 	, tileWidth(0)
@@ -21,20 +22,31 @@ Map::~Map()
 	 
 }
 
-void Map::Initialize()
+void Map::Initialize(MapLoader &map)
 {
-	tileHeight = 32;
-	tileWidth = 32;
+	
 	id = 0;
+	mapName = map.mapNameXML;
+	tileHeight = map.tileHeightXML;
+	tileWidth = map.tileWidthXML;
+	path = map.pathXML;
+	totalTiles = map.totalTilesXML;
+	for (size_t i = 0; i < tableLenght && i < map.tableLengthXML; i++)
+	{
+		
+			table[i] = map.tableXML[i];
+		
+	}
+	 
 	
 }
 
 void Map::Load()
 {
 	
-
 	
-		if (mapTexture.loadFromFile("Assets/Environment/Textures/Tiles.png")) 
+	
+		if (mapTexture.loadFromFile(path)) 
 		{
 			cout << "Map Texture loaded successfuly!" << endl;
 
@@ -47,6 +59,10 @@ void Map::Load()
 			
 				
 			
+		}
+		else
+		{
+			cout << "Failed to load the map texture! " << endl;
 		}
 	
 
@@ -74,36 +90,35 @@ void Map::Load()
 
 void Map::Update(float deltaTime)						// SE LUCREAZA, voiam sa fac coliziune intre masa si restul.
 {
-	for (int y = 0; y < 2; y++)
-	{
-		for (int x = 0; x < 3; x++)
-		{
-			int index = table[y][x];
+//	for (int y = 0; y < tableHeight; y++)
+//	{
+//		for (int x = 0; x < tableWitdh; x++)
+//		{
+//
+//
+//			int index = y * tableWitdh + x;
+//			
+//			FloatRect tableBounds = tilesMap[index].getGlobalBounds();
+//
+//		}
+//	}
 
-		     FloatRect tableBounds = tilesMap[index].getGlobalBounds();
-
-		}
-
-	}
+}
 
 	
-}
+
 
 void Map::Draw(RenderWindow& window)
 {
 	// am desenat masa 
 
-	for (int y = 0; y < tableHeight; y++)
+	for (int i = 0; i < tableLenght; i++)
 	{
-		for (int x = 0; x < tableWitdh; x++)
-		{
-  
-  
-		int index = table[y][x];
-		tilesMap[index].setScale(4, 2);
-		tilesMap[index].setPosition(650 + tileWidth * x * tilesMap[index].getScale().x, 320 + tileHeight * y * tilesMap[index].getScale().y);
+		
+		int index = table[i];
+		tilesMap[index].setScale(2, 2);
+		tilesMap[index].setPosition(650 + tileWidth * (i % tableWitdh)* tilesMap[index].getScale().x, 320 + tileHeight *(i / tableWitdh) * tilesMap[index].getScale().y);
 	   window.draw(tilesMap[index]);
 
-		}
 	}
-}
+  }

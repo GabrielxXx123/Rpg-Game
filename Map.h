@@ -1,7 +1,8 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <iostream>
-#include "Tile.h"
+#include "MapLoader.h"
+
 
 
 using namespace sf;
@@ -9,31 +10,30 @@ using namespace std;
 
 class Map
 {  
-   private:
-	
+private :
     Texture mapTexture;
 	
    Sprite* tilesMap;
    
-
+   public:
+	   string mapName;
+	   string path;
     int id;
-	int tileWidth;
-	int tileHeight;
+	unsigned int tileWidth;
+	unsigned int tileHeight;
 
-	int totalTilesX;
-	int totalTilesY;
-	int totalTiles;
+	unsigned int totalTilesX;
+	unsigned int totalTilesY;
+	unsigned int totalTiles;
 	
 	// ------------------------
 	//objects
 
 	int tableWitdh = 3;
 	int tableHeight = 2;
-
-	 int table[2][3] =
-	 {
-		 159,160,161,
-		 189,190,191
+	int tableLenght = tableWitdh * tableHeight;
+	 int table[6] =
+	 {	 159,160,161, 189,190,191
 	 };
 
 	
@@ -45,8 +45,9 @@ class Map
 
 	    Map();
 	   ~Map();
-
-	void Initialize();
+	
+    
+	void Initialize(MapLoader &map);
 	void Load();
 	void Update(float deltaTime);
 	void Draw(RenderWindow& window);

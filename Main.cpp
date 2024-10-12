@@ -33,15 +33,14 @@ int main()
 	Background background;
 	background.Initialize();
 	
-	Map map;
-	map.Initialize();
-
-	Clock clock;
-	
 	MapLoader mapLoader;
 	mapLoader.Load("doc.xml");
-	
-	
+
+	Map map;
+	map.Initialize(mapLoader);
+
+	Clock clock;
+
 	//--------------------------------------------------------------------INITIALIZE---------------------------------------------------------------------------------
 	
 

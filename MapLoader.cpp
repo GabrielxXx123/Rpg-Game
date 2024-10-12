@@ -1,12 +1,17 @@
 #include "MapLoader.h"
 #include <fstream>
 #include <string>
+#include <sstream>
+#include "Map.h"
 
+
+// -----------------------------------------  IN DOC.XML ----------- All variables must start with space " " and finish with space " " ----------------------------------//
 void MapLoader::Load(string filename)
+
 {
 	
 	ifstream file(filename);
-
+	
 	
 
 	if (file.is_open())
@@ -30,8 +35,8 @@ void MapLoader::Load(string filename)
 			
 				if (mapExist)
 				{
-					ContentExtract(line);
 					
+
 					if (line == "</Map>")
 					{
 						cout << line << endl;
@@ -39,7 +44,84 @@ void MapLoader::Load(string filename)
 						cout << endl;
 						break;
 					}
+				
+
+					int start = line.find(" ");
+					int end = line.rfind(" ");
+
+					if (start != string::npos && end != string::npos && start < end)
+					{
+						tag = line.substr(0, start);
+						value = line.substr(start  + 1 , end - start);
+						
+					}
+					else
+					{
+						cout << "Error ContentExtract 00005fB!" << endl;
+						
+					}
 					
+					try {
+
+						if (tag == "<name>")
+						{
+							mapNameXML = value;
+						}
+						else if (tag == "<tileWidth>")
+						{
+							tileWidthXML = stoi(value);
+						}
+						else if (tag == "<tileHeight>")
+						{
+							tileHeightXML = stoi(value);
+						}
+						else if (tag == "<totalTiles>")
+						{
+							totalTilesXML = stoi(value);
+						}
+						else if (tag == "<path>")
+						{
+							pathXML = value;
+						}
+						else if (tag == "<table>")
+						{
+							stringstream ss(value);
+							int index = 0;
+
+							while (ss >> cell) {
+								
+								int a = std::stoi(cell);
+
+								
+								if (index < tableLengthXML) {
+									tableXML[index] = a;  
+									index++;  
+								}
+								else if(ss.str().empty())
+								{
+									cout << "Error: Array is empty!" << endl;
+									break;
+								}
+								else 
+								{
+									std::cout << "Error: Too many values for tableXML!" << std::endl;
+									break; 
+								}
+							}
+							
+						}
+			
+						cout << "Data from doc.xml :" << value << endl;
+
+					}
+					catch(exception e)
+					{
+						cout << "Error from data declaration!" << endl;
+					}
+					
+					
+					
+
 				}
 				
 			
@@ -57,10 +139,12 @@ void MapLoader::ContentExtract(string& line)
 {
 	int start = line.find(" ");
 	int end = line.rfind(" ");
+	
 	if (start != string::npos && end != string::npos)
-	{
-		string content = line.substr(start, end - start);
-		cout << content << endl;
+	{   
+		
+		 string value = line.substr(start, end - start);
+		
 	}
 	else
 	{
@@ -69,4 +153,3 @@ void MapLoader::ContentExtract(string& line)
 
 }
 
- 
