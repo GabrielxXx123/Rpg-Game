@@ -65,59 +65,117 @@
         {
           "ruleId": "C26495",
           "message": {
-            "text": "Variable 'Enemy::expFinish' is uninitialized. Always initialize a member variable (type.6)."
+            "text": "Variable 'MapLoader::tileWidthXML' is uninitialized. Always initialize a member variable (type.6)."
           },
           "locations": [
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "file:///C:/Users/Paolino/Desktop/RPG-game/Enemy.h"
+                  "uri": "file:///C:/Users/Paolino/Desktop/RPG-game/MapLoader.h"
                 },
                 "region": {
-                  "startLine": 73,
+                  "startLine": 44,
                   "startColumn": 1
                 }
               },
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Enemy::{ctor}",
-                  "decoratedName": "??0Enemy@@QEAA@XZ",
+                  "fullyQualifiedName": "MapLoader::{ctor}",
+                  "decoratedName": "??0MapLoader@@QEAA@XZ",
                   "kind": "function"
                 }
               ]
             }
           ],
           "properties": {
-            "targetSymbol": "Enemy::expFinish"
+            "targetSymbol": "MapLoader::tileWidthXML"
           }
         },
         {
           "ruleId": "C26495",
           "message": {
-            "text": "Variable 'Enemy::enemyDead' is uninitialized. Always initialize a member variable (type.6)."
+            "text": "Variable 'MapLoader::tileHeightXML' is uninitialized. Always initialize a member variable (type.6)."
           },
           "locations": [
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "file:///C:/Users/Paolino/Desktop/RPG-game/Enemy.h"
+                  "uri": "file:///C:/Users/Paolino/Desktop/RPG-game/MapLoader.h"
                 },
                 "region": {
-                  "startLine": 73,
+                  "startLine": 44,
                   "startColumn": 1
                 }
               },
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Enemy::{ctor}",
-                  "decoratedName": "??0Enemy@@QEAA@XZ",
+                  "fullyQualifiedName": "MapLoader::{ctor}",
+                  "decoratedName": "??0MapLoader@@QEAA@XZ",
                   "kind": "function"
                 }
               ]
             }
           ],
           "properties": {
-            "targetSymbol": "Enemy::enemyDead"
+            "targetSymbol": "MapLoader::tileHeightXML"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'MapLoader::totalTilesXML' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Paolino/Desktop/RPG-game/MapLoader.h"
+                },
+                "region": {
+                  "startLine": 44,
+                  "startColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "MapLoader::{ctor}",
+                  "decoratedName": "??0MapLoader@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "MapLoader::totalTilesXML"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'MapLoader::tableXML' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Paolino/Desktop/RPG-game/MapLoader.h"
+                },
+                "region": {
+                  "startLine": 44,
+                  "startColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "MapLoader::{ctor}",
+                  "decoratedName": "??0MapLoader@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "MapLoader::tableXML"
           }
         }
       ],
@@ -148,13 +206,13 @@
         },
         {
           "location": {
-            "uri": "file:///C:/Users/Paolino/Desktop/RPG-game/Enemy.h"
+            "uri": "file:///C:/Users/Paolino/Desktop/RPG-game/MapLoader.h"
           },
           "roles": [
             "resultFile"
           ],
           "hashes": {
-            "sha-256": "e7442f2604e1655153aac23a8bfad32415bca588ed58d2013841c09bbe0cdfd3"
+            "sha-256": "69aff37c8aea16bbc0c870c31551ea7d6fc709c55fa720c3626e94bb2706470d"
           }
         },
         {
@@ -165,7 +223,7 @@
             "analysisTarget"
           ],
           "hashes": {
-            "sha-256": "42be0332fd782b6617c0c0cd6d1a080f415cfa3d228f76bc874a31ec19006ca8"
+            "sha-256": "21c017da4221343b769ba84b9d9aaf6c57d3b66574c126c106c4cccea129850e"
           }
         },
         {
@@ -794,6 +852,14 @@
         },
         {
           "location": {
+            "uri": "file:///c:/users/paolino/desktop/rpg-game/enemy.h"
+          },
+          "hashes": {
+            "sha-256": "c521a3b5c257cd662452318c0eb9bcc46ff5daad5022e9f0b7d19a110fb3d466"
+          }
+        },
+        {
+          "location": {
             "uri": "file:///c:/users/paolino/desktop/rpg-game/framerate.h"
           },
           "hashes": {
@@ -813,23 +879,7 @@
             "uri": "file:///c:/users/paolino/desktop/rpg-game/map.h"
           },
           "hashes": {
-            "sha-256": "a9a2c7f8e3611cb2d60a7bd68863e5ac5f9c4db9701e8cec8e3918c8764f6fee"
-          }
-        },
-        {
-          "location": {
-            "uri": "file:///c:/users/paolino/desktop/rpg-game/tile.h"
-          },
-          "hashes": {
-            "sha-256": "24ffb3fdbfd0ead7b41f58c5573573025ea1d2f70fa441de6b5dba5b75155740"
-          }
-        },
-        {
-          "location": {
-            "uri": "file:///c:/users/paolino/desktop/rpg-game/maploader.h"
-          },
-          "hashes": {
-            "sha-256": "a84f6b73449cce89473107f47758ea2777b3858c2e22cafc9a6770bab6b59544"
+            "sha-256": "b42a79043fe00ac95d3a75166b3e779e00fe6b1a41d578e6e0b38060558cdacc"
           }
         }
       ]

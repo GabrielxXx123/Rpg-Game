@@ -8,12 +8,12 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Variable 'sf::Glyph::rsbDelta' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <DESCRIPTION>Variable 'sf::Glyph::lsbDelta' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
     <FUNCTION>sf::Glyph::{ctor}</FUNCTION>
     <DECORATED>??0Glyph@sf@@QEAA@XZ</DECORATED>
     <FUNCLINE>49</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>sf::Glyph::rsbDelta</targetSymbol>
+      <targetSymbol>sf::Glyph::lsbDelta</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -25,12 +25,12 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Variable 'sf::Glyph::lsbDelta' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <DESCRIPTION>Variable 'sf::Glyph::rsbDelta' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
     <FUNCTION>sf::Glyph::{ctor}</FUNCTION>
     <DECORATED>??0Glyph@sf@@QEAA@XZ</DECORATED>
     <FUNCLINE>49</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>sf::Glyph::lsbDelta</targetSymbol>
+      <targetSymbol>sf::Glyph::rsbDelta</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>

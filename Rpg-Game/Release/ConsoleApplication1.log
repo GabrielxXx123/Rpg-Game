@@ -1,0 +1,36 @@
+﻿  Background.cpp
+C:\Users\Paolino\Desktop\RPG-game\Background.h(2,10): error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  (compiling source file 'Background.cpp')
+  
+  Bullet.cpp
+C:\Users\Paolino\Desktop\RPG-game\Bullet.h(2,10): error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  (compiling source file 'Bullet.cpp')
+  
+  Enemy.cpp
+C:\Users\Paolino\Desktop\RPG-game\Enemy.h(2,10): error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  (compiling source file 'Enemy.cpp')
+  
+  FrameRate.cpp
+C:\Users\Paolino\Desktop\RPG-game\FrameRate.h(3,10): error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  (compiling source file 'FrameRate.cpp')
+  
+  Main.cpp
+C:\Users\Paolino\Desktop\RPG-game\Player.h(2,10): error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  (compiling source file 'Main.cpp')
+  
+  Map.cpp
+C:\Users\Paolino\Desktop\RPG-game\Map.h(2,10): error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  (compiling source file 'Map.cpp')
+  
+  MapLoader.cpp
+C:\Users\Paolino\Desktop\RPG-game\Map.h(2,10): error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  (compiling source file 'MapLoader.cpp')
+  
+  Mate.cpp
+C:\Users\Paolino\Desktop\RPG-game\Mate.h(6,10): error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  (compiling source file 'Mate.cpp')
+  
+  Player.cpp
+C:\Users\Paolino\Desktop\RPG-game\Player.h(2,10): error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  (compiling source file 'Player.cpp')
+  

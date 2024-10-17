@@ -7,35 +7,6 @@
         {
           "ruleId": "C26495",
           "message": {
-            "text": "Variable 'sf::Glyph::rsbDelta' is uninitialized. Always initialize a member variable (type.6)."
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "file:///C:/Users/Paolino/Desktop/RPG-game/Dependencies/SFML/include/SFML/Graphics/Glyph.hpp"
-                },
-                "region": {
-                  "startLine": 49,
-                  "startColumn": 5
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "sf::Glyph::{ctor}",
-                  "decoratedName": "??0Glyph@sf@@QEAA@XZ",
-                  "kind": "function"
-                }
-              ]
-            }
-          ],
-          "properties": {
-            "targetSymbol": "sf::Glyph::rsbDelta"
-          }
-        },
-        {
-          "ruleId": "C26495",
-          "message": {
             "text": "Variable 'sf::Glyph::lsbDelta' is uninitialized. Always initialize a member variable (type.6)."
           },
           "locations": [
@@ -60,6 +31,35 @@
           ],
           "properties": {
             "targetSymbol": "sf::Glyph::lsbDelta"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'sf::Glyph::rsbDelta' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Paolino/Desktop/RPG-game/Dependencies/SFML/include/SFML/Graphics/Glyph.hpp"
+                },
+                "region": {
+                  "startLine": 49,
+                  "startColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "sf::Glyph::{ctor}",
+                  "decoratedName": "??0Glyph@sf@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "sf::Glyph::rsbDelta"
           }
         }
       ],

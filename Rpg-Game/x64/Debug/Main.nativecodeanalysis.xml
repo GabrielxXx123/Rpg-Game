@@ -37,34 +37,68 @@
   <DEFECT>
     <SFA>
       <FILEPATH>C:\Users\Paolino\Desktop\RPG-game\</FILEPATH>
-      <FILENAME>Enemy.h</FILENAME>
-      <LINE>73</LINE>
+      <FILENAME>MapLoader.h</FILENAME>
+      <LINE>44</LINE>
       <COLUMN>0</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Variable 'Enemy::expFinish' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
-    <FUNCTION>Enemy::{ctor}</FUNCTION>
-    <DECORATED>??0Enemy@@QEAA@XZ</DECORATED>
-    <FUNCLINE>73</FUNCLINE>
+    <DESCRIPTION>Variable 'MapLoader::tileWidthXML' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>MapLoader::{ctor}</FUNCTION>
+    <DECORATED>??0MapLoader@@QEAA@XZ</DECORATED>
+    <FUNCLINE>44</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>Enemy::expFinish</targetSymbol>
+      <targetSymbol>MapLoader::tileWidthXML</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
   <DEFECT>
     <SFA>
       <FILEPATH>C:\Users\Paolino\Desktop\RPG-game\</FILEPATH>
-      <FILENAME>Enemy.h</FILENAME>
-      <LINE>73</LINE>
+      <FILENAME>MapLoader.h</FILENAME>
+      <LINE>44</LINE>
       <COLUMN>0</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Variable 'Enemy::enemyDead' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
-    <FUNCTION>Enemy::{ctor}</FUNCTION>
-    <DECORATED>??0Enemy@@QEAA@XZ</DECORATED>
-    <FUNCLINE>73</FUNCLINE>
+    <DESCRIPTION>Variable 'MapLoader::tileHeightXML' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>MapLoader::{ctor}</FUNCTION>
+    <DECORATED>??0MapLoader@@QEAA@XZ</DECORATED>
+    <FUNCLINE>44</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>Enemy::enemyDead</targetSymbol>
+      <targetSymbol>MapLoader::tileHeightXML</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Paolino\Desktop\RPG-game\</FILEPATH>
+      <FILENAME>MapLoader.h</FILENAME>
+      <LINE>44</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'MapLoader::totalTilesXML' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>MapLoader::{ctor}</FUNCTION>
+    <DECORATED>??0MapLoader@@QEAA@XZ</DECORATED>
+    <FUNCLINE>44</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>MapLoader::totalTilesXML</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Paolino\Desktop\RPG-game\</FILEPATH>
+      <FILENAME>MapLoader.h</FILENAME>
+      <LINE>44</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'MapLoader::tableXML' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>MapLoader::{ctor}</FUNCTION>
+    <DECORATED>??0MapLoader@@QEAA@XZ</DECORATED>
+    <FUNCLINE>44</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>MapLoader::tableXML</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>

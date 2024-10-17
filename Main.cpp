@@ -112,7 +112,6 @@ int main()
 		//--------------------------------------------------------------------DRAW---------------------------------------------------------------------------------
 
 		window.clear(Color::Black);
-		//background.Draw(window);
 		map.Draw(window);
 		player.Draw(window);
 		enemy.Draw(window);

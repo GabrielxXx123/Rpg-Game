@@ -96,7 +96,7 @@
             "analysisTarget"
           ],
           "hashes": {
-            "sha-256": "67c8fade8145911f3b99ad31b15489e24f8dd4b564dd14874edb336c78f1f584"
+            "sha-256": "3681f60ab05d11691c9bd42554c71aa95a2182f98ce8bc33c67f08de0d198ff3"
           }
         },
         {
@@ -104,7 +104,7 @@
             "uri": "file:///c:/users/paolino/desktop/rpg-game/map.h"
           },
           "hashes": {
-            "sha-256": "a9a2c7f8e3611cb2d60a7bd68863e5ac5f9c4db9701e8cec8e3918c8764f6fee"
+            "sha-256": "b42a79043fe00ac95d3a75166b3e779e00fe6b1a41d578e6e0b38060558cdacc"
           }
         },
         {
@@ -709,10 +709,10 @@
         },
         {
           "location": {
-            "uri": "file:///c:/users/paolino/desktop/rpg-game/tile.h"
+            "uri": "file:///c:/users/paolino/desktop/rpg-game/maploader.h"
           },
           "hashes": {
-            "sha-256": "24ffb3fdbfd0ead7b41f58c5573573025ea1d2f70fa441de6b5dba5b75155740"
+            "sha-256": "69aff37c8aea16bbc0c870c31551ea7d6fc709c55fa720c3626e94bb2706470d"
           }
         }
       ]
